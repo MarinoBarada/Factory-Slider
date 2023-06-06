@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 60px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  gap: 19px;
+}
+
+.div1,
+.div2 {
+  background-color: #dddddd;
+  height: 100px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.div1 {
+  width: 301px;
+}
+
+.div2 {
+  width: 621px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 19px;
+}
+
+.slider-wrapper {
+  width: 65%;
+  overflow: visible;
+  display: grid;
+  grid-template-rows: 200px 200px;
+  grid-template-columns: 1fr 1fr 1fr 149px;
+  gap: 10px;
+}
+
+.row1,
+.row2 {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.row1 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.row2 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.slider-item {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: start;
+  align-items: end;
+}
+.controls .prev-arrow, .controls .next-arrow {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #134880;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+}
+
+.next-arrow:disabled {
+  border: 2px solid #dddddd;
+}
+
+.prev-arrow:disabled {
+  border: 2px solid #dddddd;
+}
+
+.next-arrow:disabled img {
+  content: url("../images/arrow-gray-right.png");
+}
+
+.prev-arrow:disabled img {
+  content: url("../images/arrow-gray-left.png");
+}
+
+.text {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  height: 410px;
+  gap: 10px;
+}
+.text h1 {
+  font-size: 32px;
+  line-height: 3rem;
+  color: #134880;
+  font-weight: 700;
+}
+.text p {
+  font-size: 20px;
+  line-height: 1.8rem;
+  font-weight: 400;
+}
+
+footer {
+  background-color: #dddddd;
+  height: 100px;
+  border-radius: 0px 0px 5px 5px;
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    height: fit-content;
+    flex-direction: column-reverse;
+    margin-bottom: 10px;
+  }
+  .slider-wrapper {
+    width: 100%;
+  }
+  .text {
+    width: fit-content;
+    padding: 0 32px;
+    flex-direction: column;
+    height: fit-content;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
