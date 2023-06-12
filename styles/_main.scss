@@ -56,14 +56,24 @@ header {
   gap: 10px;
 }
 
-.row1 {
+.row-wrapper1 {
   grid-column-start: 1;
   grid-column-end: 5;
+  position: relative;
 }
-
-.row2 {
+.row-wrapper2 {
   grid-column-start: 1;
   grid-column-end: 4;
+  position: relative;
+}
+
+.row1 , .row2{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width:max-content;
+  overflow: hidden;
 }
 
 .slider-item {
@@ -98,6 +108,20 @@ header {
 
 .prev-arrow:disabled {
   border: 2px solid $border-no-active;
+}
+
+.next-arrow:hover {
+  border: 2px solid $border-no-active;
+}
+.prev-arrow:hover {
+  border: 2px solid $border-no-active;
+}
+
+.next-arrow:hover img{
+  content: url("../images/arrow-gray-right.png");
+}
+.prev-arrow:hover img{
+  content: url("../images/arrow-gray-left.png");
 }
 
 .next-arrow:disabled img {

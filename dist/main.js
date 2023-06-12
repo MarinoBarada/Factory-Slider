@@ -10,12 +10,14 @@ $(document).ready(function () {
       var firstItem = row.find(".slider-item:first-child");
       var lastItem = row.find(".slider-item:last-child");
       var lastItemWidth = lastItem.width();
+      var moveItems = lastItemWidth + 10;
+      console.log(lastItemWidth);
       firstItem.animate({
-        "margin-right": lastItemWidth
-      }, 1000, function () {
+        "margin-right": moveItems
+      }, 800, function () {
         firstItem.before(lastItem);
         firstItem.css("margin-right", 0);
-        lastItem.hide().fadeIn(1000, function () {
+        lastItem.hide().fadeIn(800, function () {
           prevArrow.prop("disabled", false);
         });
       });
@@ -29,8 +31,15 @@ $(document).ready(function () {
       var row = $(this);
       var firstItem = row.find(".slider-item:first-child");
       var lastItem = row.find(".slider-item:last-child");
-      lastItem.after(firstItem);
-      nextArrow.prop("disabled", false);
+      var firstItemWidth = firstItem.width();
+      var moveItems = -firstItemWidth - 10;
+      firstItem.animate({
+        "margin-right": moveItems
+      }, 800, function () {
+        firstItem.css("margin-right", 0);
+        $(this).insertAfter(lastItem);
+        nextArrow.prop("disabled", false);
+      });
     });
   });
 });
