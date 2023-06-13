@@ -11,7 +11,6 @@ $(document).ready(function () {
       var lastItem = row.find(".slider-item:last-child");
       var lastItemWidth = lastItem.width();
       var moveItems = lastItemWidth + 10;
-      console.log(lastItemWidth);
 
       firstItem.animate({ "margin-right": moveItems }, 800, function () {
         firstItem.before(lastItem);
